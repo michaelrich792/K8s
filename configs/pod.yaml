@@ -32,5 +32,5 @@ metadata:
 
 spec:
   containers:
-  - name: "nginx-container"
+  - name: "redmine-container"
     image: "redmine"
