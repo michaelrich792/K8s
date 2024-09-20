@@ -1,1 +1,39 @@
 This is the directory for the K8S commands. 
+
+
+In order to setup Kubernetes (Minikube) following the following steps:
+
+Visit the website
+
+Ensure you have Virualisation enabled in the BIOS.
+Ensure you have Virtualbox of Docker Desktop installed.
+
+winget install Kubernetes.minikube      =   To install VirtualBox
+
+minikube start --no-vtx-check           =   If you NEED to bypass the virutalisation check in the BIOS.
+
+minikube start --driver=virtualbox      =   If you're using VirtualBox,
+
+kubectl get pods -A                     =   To view the current pods on system.
+
+kubectl get nodes                       =   View the nodes currently running on system.
+kubectl describe pods -o wide                =   Adds additional info about the node its located on.
+
+kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10
+                                        =   Test and create a deployment.
+
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+                                        =   Expose port 8080 to outside
+
+minikube service hello-minikube --url   =   To get the exposed URL for the hello-minikube deployment.
+
+minikube delete services [SERVICE-NAME] =   To delete the service.
+
+
+kubectl run [NAME OF POD] --image=[IMAGE-NAME-ON-REPO]
+kubectl describe pods                   =   Get more information on the pod
+
+
+
+kubectl create deployment nginx --image=nginx =   To create a pod and a deployment at the same time.
+
