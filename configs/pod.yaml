@@ -1,0 +1,17 @@
+apiVersion: v1
+
+kind: pod
+
+metadata:
+  name: server-01
+  labels:
+    nameOwner: "Michael Richardson"
+    app: "orchestration"
+    department: "IT"
+    billing: "ITOps"
+
+
+spec:
+  containers:
+    - name: "nginx-container"
+      image: "nginx"
