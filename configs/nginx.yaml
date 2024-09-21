@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-01
+  labels:
+    name: myapp-01
+    business: front-end
+    os: captial-markets
+    env: production
+spec:
+  containers:
+  - name: myapp-nginx
+    image: "nginx"
+    resources:
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: Port80
