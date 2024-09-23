@@ -33,7 +33,11 @@ minikube delete services [SERVICE-NAME] =   To delete the service.
 kubectl run [NAME OF POD] --image=[IMAGE-NAME-ON-REPO]
 kubectl describe pods                   =   Get more information on the pod
 
-
+kubelet create -f [FILENAME].yaml       = Create a deployment based on a yaml config file.
 
 kubectl create deployment nginx --image=nginx =   To create a pod and a deployment at the same time.
 
+++++++++++++++++
+++++++++++++++++
+
+kubectl drain [minikube|NODE NAME] --ignore-daemonsets --delete-emptydir-data --force = To delete all pods on a node at once.
