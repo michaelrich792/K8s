@@ -41,3 +41,8 @@ kubectl create deployment nginx --image=nginx =   To create a pod and a deployme
 ++++++++++++++++
 
 kubectl drain [minikube|NODE NAME] --ignore-daemonsets --delete-emptydir-data --force = To delete all pods on a node at once.
+
+
+kubectl delete pods -l app=myapp = Deleting multiple pods at the same time with wildcards.
+kubectl delete pods -l KEY=VALUE = Usually the label to provide for the pods.
+

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name:  replicaset-prod
+  labels:
+    app: replicaset-prod
+    env: prod
+    version: v1
+    tier: frontend
+    track: stable
+    owner: ITOps
+    managed-by: maven
+    created-by: maven
+    project: replicaset
+    component: replicaset
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: replicaset-prod
+  template:
+    metadata:
+      name: replicaset-prod-server
+      labels:
+        app: replicaset-prod
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-prod
+          image: nginx:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

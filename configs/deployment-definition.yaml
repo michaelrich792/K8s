@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  deployment-prod
+  labels:
+    app: deployment-prod-prod
+    env: prod
+    version: v1
+    tier: frontend
+    track: stable
+    owner: ITOps
+    managed-by: maven
+    created-by: maven
+    project: deployment-prod
+    component: deployment-replicaset
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: deployment-prod
+  template:
+    metadata:
+      name: deployment-prod-server
+      labels:
+        app: deployment-prod
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-prod
+          image: nginx:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
