@@ -1,0 +1,22 @@
+docker run -d --name=[DESC_NAME] [DOCK IMAGE NAME]
+
+docker run -d --name=vote -p 5000:80 voting-app     = Creates a voting App.
+
+docker run -d --name=results -p 5001:80 result-app  = Creates a results app
+
+docker run -d --name=redis redis      = creates a redis pod.
+
+docker run -d --name=worker worker    = Create a worker pod.
+
+docker run -d --name=db postgres:9.4  = Create a postgres pod.
+
+This is an old  and would soon be deprecated, using ways usingdocker swarn and other networking functions have superceded.
+
+£
+# images used for this lab:
+kodekloud/examplevotingapp_result:v1
+kodekloud/examplevotingapp_vote:v1
+kodekloud/examplevotingapp_worker:v1
+redis
+postgresql
+

@@ -46,3 +46,30 @@ kubectl drain [minikube|NODE NAME] --ignore-daemonsets --delete-emptydir-data --
 kubectl delete pods -l app=myapp = Deleting multiple pods at the same time with wildcards.
 kubectl delete pods -l KEY=VALUE = Usually the label to provide for the pods.
 
+kubectl delete pods -l 'app-type in (react, graphql)'   =
+kubectl delete pods -l 'LABEL-NAME in (LABEL1, LABEL2)' =  If you want to delete based on a combination of labels.
+
+kubectl get replicaset                 = To display the replicaset on system.
+
+kubectl delete replicaset [NAME OF REPLICASET]  = To delete a replicaset.
+
+kubectl replace -f [FILENAME].yaml = to update configuration (once the file has been updated.)
+
+kubectl scale --replicas=6 -f [FILENAME].yaml = Scale/update an existing replicaset.
+
+ubectl scale deployment [NAME OF DEPLOYMENT] --replicas=X = To increase the number of pods in a deployment.
+
+kubectl get all         = Get all ifnormation command
+
+
+
+DEPLOYMENTS UPDATES & ROLLBACKS:
+
+kubectl rollout status deployment/[DEPLOYMENT NAME]     = To see the status of the rollout.
+
+
+kubectl rollout history deployment/[DEPLOYMENT NAME]    =  To see teh history of a rollout.
+
+
+kubectl rollback undo deployment [DEPLOYMENT-NAME] back undo deploy    =   To perform a rollback 
+
